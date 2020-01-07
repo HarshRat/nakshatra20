@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="{{ url_for('static', filename='css/hamburger.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.min.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Philosopher" /> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet"> -->
+    {% if title %}
+        <title>{{title}} - Nakshatra'20</title>
+    {% else %}
+        <title>Nakshatra'20</title>
+    {% endif %}
+    <style>
+        body{
+            background: linear-gradient(90deg, #050054 20px, transparent 1%) center, linear-gradient(#050054 20px, transparent 1%) center, rgb(0, 13, 32);
+        background-size: 22px 22px;
+        color:white;
+        }
+    </style>
+</head>
+    <div class="loader-img">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="" class = "loader-logo">
+    </div>
+    <body style="background-color: rgb(2, 0, 36);">
+    <div class="content">
+        <nav class="topnav" id="myTopnav">
+            <a href="{{ url_for('main.home')}}"><div class="nav-logo">
+              NAKSHATRA '20
+            </div></a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <button class="hamburger hamburger--collapse" type="button">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+            </a>
+            <div class="nav-links" id="nav-links">
+                  <a href="{{ url_for('main.home')}}" class="nav-l {% if active_page==0 %} active-nav{% endif %}">Home</a>
+                  <a href="{{ url_for('main.events')}}" class="nav-l {% if active_page==1 %} active-nav{% endif %}">Events</a>
+                  <a href="{{ url_for('main.teams')}}" class="nav-l {% if active_page==2 %} active-nav{% endif %}">Teams</a>
+                  <a href="{{ url_for('main.about')}}" class="nav-l {% if active_page==3 %} active-nav{% endif %}">About</a>
+                  {% if current_user.is_authenticated %}
+                        <a class="nav-l" href="{{ url_for('users.logout')}}">Logout</a>
+                    {% if current_user.user_type=="admin" %}
+                        <a class="nav-l" href="{{ url_for('admin.index_view')}}">Admin</a>
+                    {% endif %}
+                {% else %}
+                    <a class="nav-l {% if active_page==4 %} active-nav{% endif %}" href="{{ url_for('users.register')}}">Register</a>
+                    <a class="nav-l {% if active_page==5 %} active-nav{% endif %}" href="{{ url_for('users.login')}}">Login</a>
+                {% endif %}
+              </div>
+        </nav>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                    {% for category, message in messages %}
+                        <script>alert("{{category}} : {{message}}");</script><div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="container">
+                {% block content %}{% endblock %}
+        </div>
+        
+    </div>
+        <script>
+            function myFunction() {
+            var x = document.getElementById("myTopnav");
+            var rest = document.getElementsByClassName("logos");
+            if (x.className == "topnav") {
+              x.className += " responsive";
+              for (var i=0;i<rest.length; i++) {
+                rest[i].style.display = 'none';
+              }
+              document.getElementById("nav-links").style.display = 'block';
+            } else {
+              for (var i=0;i<rest.length; i++) {
+                rest[i].style.display = 'block';
+              }
+              document.getElementById("nav-links").style.display = 'none';
+              x.className = "topnav";
+            }
+          }
+
+          function onReady(callback) {
+  var intervalId = window.setInterval(function() {
+    if (document.getElementsByTagName('body')[0] !== undefined) {
+      window.clearInterval(intervalId);
+      callback.call(this);
+    }
+  }, 1000);
+}
+
+
+
+          function setVisible(selector, visible) {
+  document.querySelector(selector).style.display = visible ? 'block' : 'none';
+  document.body.style.position = 'relative';
+}
+
+onReady(function() {
+    console.log('running');
+  setVisible('.content', true);
+  setVisible('.loader-img', false);
+});
+
+
+          </script>
+        </body>
+        </html>

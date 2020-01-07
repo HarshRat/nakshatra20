@@ -1,0 +1,146 @@
+{% extends "main/layout.html" %}
+{% block content %}
+    <form action="" method="POST">
+        <h2>Register Your College</h2>
+        {{ form.hidden_tag() }}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="college">College Name</label>
+                    {{ form.college(class="form-control") }}
+                    <div class="small text-danger">
+                        {% for error in form.college.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="leader_name">Leader Name</label>
+                    {{ form.leader_name(class="form-control") }}
+                    <div class="small text-danger">
+                        {% for error in form.leader_name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="leader_email">Leader Email</label>
+                    {{ form.leader_email(class="form-control") }}
+                    <div class="small text-danger">
+                        {% for error in form.leader_email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-md-6">
+        <div class="form-group">
+            <label for="participant_1_name">Participant 1 Name</label>
+            {{ form.participant_1_name(class="form-control") }}
+            <div class="small text-danger">
+                {% for error in form.participant_1_name.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="participant_1_name">Participant 1 Email</label>
+            {{ form.participant_1_email(class="form-control") }}
+            <div class="small text-danger">
+                {% for error in form.participant_1_email.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </div>
+        <div class="row">
+                <div class="col-md-6">
+        <div class="form-group">
+            <label for="participant_2_name">Participant 2 Name</label>
+            {{ form.participant_2_name(class="form-control") }}
+            <div class="small text-danger">
+                {% for error in form.participant_2_name.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+        <div class="col-md-6">
+        <div class="form-group">
+            <label for="participant_2_name">Participant 2 Email</label>
+            {{ form.participant_2_email(class="form-control") }}
+            <div class="small text-danger">
+                {% for error in form.participant_2_email.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+        </div>
+        <div class="row">
+                <div class="col-md-6">
+        <div class="form-group">
+            <label for="participant_3_name">Participant 3 Name</label>
+            {{ form.participant_3_name(class="form-control") }}
+            <div class="small text-danger">
+                {% for error in form.participant_3_name.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="participant_3_name">Participant 3 Email</label>
+            {{ form.participant_3_email(class="form-control") }}
+            <div class="small text-danger">
+                {% for error in form.participant_3_email.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </div>
+        <div class="row">
+                <div class="col-md-6">
+        <div class="form-group">
+            <label for="participant_4_name">Participant 4 Name</label>
+            {{ form.participant_4_name(class="form-control") }}
+            <div class="small text-danger">
+                {% for error in form.participant_4_name.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="participant_4_name">Participant 4 Email</label>
+            {{ form.participant_4_email(class="form-control") }}
+            <div class="small text-danger">
+                {% for error in form.participant_4_email.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+        </div>
+        <div>
+                <small class="text-muted">you can only register once be careful</small>
+        </div>
+        <div>
+        {{ form.submit(class="btn btn-primary") }}
+    </div>
+    </form>
+{% endblock %}

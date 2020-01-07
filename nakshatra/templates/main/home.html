@@ -1,0 +1,17 @@
+{% extends "main/main_layout.html" %}
+{% set active_page = 0 %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+<div class="nak-logo logos">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" class="nak-logo-img">
+  </div>
+  <div class="kla-logo logos">
+    <img src="{{ url_for('static', filename='images/kla_logo.png') }}" class="kla" alt="">
+  </div>
+  <div class="rest-logos logos">
+      <img src="{{ url_for('static', filename='images/gfg_logo.png') }}" class="gfg" alt="">
+      <img src="{{ url_for('static', filename='images/cb_logo.png') }}" class="cb" alt="">
+  </div>
+<script src="{{ url_for('static', filename='js/particles.js') }}" charset="utf-8"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}" charset="utf-8"></script>
+{% endblock content %}

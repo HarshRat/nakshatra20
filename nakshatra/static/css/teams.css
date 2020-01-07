@@ -1,0 +1,26 @@
+body{
+	background-color: rgb(2, 0, 36);
+}
+
+p {
+	color:#000;
+}
+
+a:hover {
+	text-decoration:none;	
+}
+
+.portfolios {	
+	text-align:center;
+	margin-top:10px;
+	margin-bottom:30px;
+	padding:90px 0 90px 0;
+}
+
+.portfolio {
+	margin-top:5px;
+}
+
+#flb-lightbox-text{
+	background-color: #000;
+}

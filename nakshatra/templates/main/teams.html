@@ -1,0 +1,78 @@
+{% extends "main/layout.html" %}
+{% set active_page = 2 %}
+{% block content %}
+<link href="{{ url_for('static', filename='css/responsive-slider.css') }}" rel="stylesheet" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}" />
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/teams.css') }}" />
+<div class="row">
+        <div class="col-lg-12">
+          <div class="portfolios">
+            <a href="{{ url_for('static', filename='images/advertisement.png') }}" class="flipLightBox">
+              <img
+                src="{{ url_for('static', filename='images/advertisement.png') }}"
+                width="225"
+                height="225"
+                alt="TEAM 1"
+              />
+              <span><b>THIS IS ADVERTISEMENT TEAM OF NAKSHATRA 2020</b> </span>
+            </a>
+  
+            <a href="{{ url_for('static', filename='images/hospitality.png') }}" class="flipLightBox">
+              <img
+                src="{{ url_for('static', filename='images/hospitality.png') }}"
+                width="225"
+                height="225"
+                alt="TEAM 2"
+              />
+              <span><b>THIS IS HOSPITALITY TEAM OF NAKSHATRA 2020</b></span>
+            </a>
+  
+            <a href="{{ url_for('static', filename='images/sponsor.png') }}" class="flipLightBox">
+              <img src="{{ url_for('static', filename='images/sponsor.png') }}" width="225" height="225" alt="TEAM 3" />
+              <span><b>THIS IS SPONSORSHIP TEAM OF NAKSHATRA 2020</b></span>
+            </a>
+  
+            <a href="{{ url_for('static', filename='images/technical.png') }}" class="flipLightBox">
+              <img
+                src="{{ url_for('static', filename='images/technical.png') }}"
+                width="225"
+                height="225"
+                alt="TEAM 4"
+              />
+              <span><b>THIS IS TECHNICAL TEAM OF NAKSHATRA 2020</b></span>
+            </a>
+  
+            <div class="portfolio">
+              <a href="{{ url_for('static', filename='images/cutural.png') }}" class="flipLightBox">
+                <img
+                  src="{{ url_for('static', filename='images/cutural.png') }}"
+                  width="225"
+                  height="225"
+                  alt="TEAM 5"
+                />
+                <span><b>THIS IS CULTURAL TEAM OF NAKSHATRA 2020</b></span>
+              </a>
+  
+              <a href="{{ url_for('static', filename='images/design.png') }}" class="flipLightBox">
+                <img src="{{ url_for('static', filename='images/design.png') }}" width="225" height="225" alt="TEAM 6" />
+                <span><b>THIS IS DESIGN TEAM OF NAKSHATRA 2020</b></span>
+              </a>
+  
+              <a href="{{ url_for('static', filename='images/event.png') }}" class="flipLightBox">
+                <img src="{{ url_for('static', filename='images/event.png') }}" width="225" height="225" alt="TEAM 7" />
+                <span><b>THIS IS EVENT TEAM OF NAKSHATRA 2020</b></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="{{ url_for('static', filename='js/jquery-2.1.1.min.js') }}"></script>
+          <script src="{{ url_for('static', filename='bootstrap/popper.min.js') }}"></script>
+          <script src="{{ url_for('static', filename='bootstrap/bootstrap.min.js') }}"></script>
+          <script src="{{ url_for('static', filename='js/responsive-slider.js') }}"></script>
+          <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+          <script src="{{ url_for('static', filename='js/fliplightbox.min.js') }}"></script>
+          <script src="{{ url_for('static', filename='js/teams.js') }}"></script>
+{% endblock content %}
